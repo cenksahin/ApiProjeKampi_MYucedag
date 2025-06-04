@@ -1,0 +1,14 @@
+
+kaldým:
+37. video
+
+
+kur:
+-ApiProjeKampi.WebApi
+Swashbuckle.AspNetCore  //swagger - test etme ekraný için ekle : https://localhost:7203/swagger
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.Design
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+AutoMapper
+FluentValidation

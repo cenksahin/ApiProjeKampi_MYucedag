@@ -1,0 +1,48 @@
+﻿@model List<ResultNotificationDto>
+
+<li class="dropdown dropdown-list-toggle">
+    <a href="#" data-toggle="dropdown"
+       class="nav-link notification-toggle nav-link-lg">
+        <i data-feather="bell" class="bell"></i>
+    </a>
+    <div class="dropdown-menu dropdown-list dropdown-menu-right pullDown">
+        <div class="dropdown-header">
+            Bildirimler
+            <div class="float-right">
+                <a href="#">Tümünü Okundu Yap</a>
+            </div>
+        </div>
+
+        <div class="dropdown-list-content dropdown-list-icons">
+
+            @{
+                string aClass = "";
+            }
+
+            @foreach (var item in Model)
+            {
+                aClass = "dropdown-item dropdown-item-unread";
+
+                if (item.IsRead!.Value == true)
+                {
+                    aClass = "dropdown-item";
+                }
+
+                <a href="#" class="@aClass">
+                    <span class="dropdown-item-icon bg-primary text-white">
+                        <i class="@item.IconUrl"></i>
+                    </span>
+
+                    <span class="dropdown-item-desc">
+                        @item.Description
+                        <span class="time">@item.NotificationDate!.Value.ToString("HH:mm")</span>
+                    </span>
+                </a>
+            }
+
+        </div>
+        <div class="dropdown-footer text-center">
+            <a href="#">Tümünü Gör <i class="fas fa-chevron-right"></i></a>
+        </div>
+    </div>
+</li>
